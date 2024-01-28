@@ -1,0 +1,17 @@
+/* Your custom styles go here */
+
+/* Jumbotron styles (adjust as needed) */
+.jumbotron {
+    position: relative;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.0rem;
+    background-color: rgb(81, 124, 103);
+}
+
+/* Background image styles */
+
+
+.jumbo_text {
+    color: white;
+  }
