@@ -13,6 +13,7 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,7 @@
                             <td>{{ $product->qty }}</td>
                             <td>{{ $product->price }} EUR</td>
                             <td>{{ $product->description }}</td>
+                            <td> Some actions here </td>
                         </tr>
                     @endforeach
                 </tbody>

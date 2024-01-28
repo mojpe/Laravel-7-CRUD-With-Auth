@@ -1,11 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\ProductController;
-//use App\Http\Controllers\ProductsHomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\Auth\Auth0Controller;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardProductController;
 
@@ -26,13 +24,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Show a list of products
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 
-// Lets a user login
-Route::get('/login', [Auth0Controller::class, 'login'])->name('login');
-// Lets a user logout
-Route::get('/logout', [Auth0Controller::class, 'logout'])->name('logout')->middleware('auth');
-// Auth0 provided route to handle the login callback
-Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
-
 // Show a user's dashboard homepage
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // Show a user's products in their dashboard
@@ -43,6 +34,9 @@ Route::get('/dashboard/products/new', [DashboardProductController::class, 'creat
 Route::get('/dashboard/products/{id}', [DashboardProductController::class, 'show'])->name('dashboard.products.show');
 // Show the page to edit a product
 Route::get('/dashboard/products/{id}/edit', [DashboardProductController::class, 'edit'])->name('dashboard.products.edit');
+// Lets a user login
+Auth::routes();
+
 
 //Route::view('/', 'home'); 
 //
@@ -69,3 +63,4 @@ Route::get('/dashboard/products/{id}/edit', [DashboardProductController::class, 
 //Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
