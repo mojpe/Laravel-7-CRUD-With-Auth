@@ -28,25 +28,19 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products.in
 
 // Lets a user login
 Route::get('/login', [Auth0Controller::class, 'login'])->name('login');
-
 // Lets a user logout
 Route::get('/logout', [Auth0Controller::class, 'logout'])->name('logout')->middleware('auth');
-
 // Auth0 provided route to handle the login callback
 Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
 
 // Show a user's dashboard homepage
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 // Show a user's products in their dashboard
 Route::get('/dashboard/products', [DashboardProductController::class, 'index'])->name('dashboard.products');
-
 // Show the page to create a product
 Route::get('/dashboard/products/new', [DashboardProductController::class, 'create'])->name('dashboard.products.create');
-
 // Show a single product
 Route::get('/dashboard/products/{id}', [DashboardProductController::class, 'show'])->name('dashboard.products.show');
-
 // Show the page to edit a product
 Route::get('/dashboard/products/{id}/edit', [DashboardProductController::class, 'edit'])->name('dashboard.products.edit');
 
