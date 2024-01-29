@@ -24,7 +24,10 @@
                             <td>{{ $product->qty }}</td>
                             <td>{{ $product->price }} EUR</td>
                             <td>{{ $product->description }}</td>
-                            <td> Edit Delete </td>
+                            <td> 
+                                <a href="/dashboard/{{ $product->id }}/edit" class="btn btn-sm btn-success">Edit</a>
+                                <a href="/dashboard/{{ $product->id }}/delete" class="btn btn-sm btn-danger">Delete</a> 
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

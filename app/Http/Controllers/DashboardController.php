@@ -10,7 +10,7 @@ class DashboardController extends Controller
     {
         $this->middleware(function ($request, $next) {
             if (!Auth::check()) {
-                return redirect('home')->with('error', 'You must be logged in to access the dashboard.');
+                return redirect('/')->with('error', 'You must be logged in to access the dashboard.');
             }
 
             return $next($request);
