@@ -2,8 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Product;
+
 class DashboardProductController extends Controller
 {
+    public function __construct()
+    {   
+        $this->middleware(function ($request, $next) {
+            if (!Auth::check()) {
+                return redirect('/')->with('error', 'You must be logged in to access the dashboard.');
+            }
+
+            return $next($request);
+        }); 
+    }
+
     public function index()
     {
         // Logic to fetch user's products and pass them to the view
@@ -18,15 +33,13 @@ class DashboardProductController extends Controller
 
     public function show($id)
     {
-        // Logic to fetch and pass a single product to the view
-        $product = '';/* Your logic to fetch a single product */;
+        $product = Product::find($id);
         return view('dashboard.products.show', compact('product'));
     }
 
     public function edit($id)
     {
-        // Logic to fetch and pass a single product to the view
-        $product = '';/* Your logic to fetch a single product */;
+        $product = Product::find($id);
         return view('dashboard.products.edit', compact('product'));
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app') <!-- Assuming you have a layout file -->
+@extends('layouts.app')
 
 @section('content')
     <div class="container mt-5">
@@ -25,8 +25,9 @@
                             <td>{{ $product->price }} EUR</td>
                             <td>{{ $product->description }}</td>
                             <td> 
-                                <a href="/dashboard/{{ $product->id }}/edit" class="btn btn-sm btn-success">Edit</a>
-                                <a href="/dashboard/{{ $product->id }}/delete" class="btn btn-sm btn-danger">Delete</a> 
+                                <a href="/dashboard/product/{{ $product->id }}/view" class="btn btn-sm btn-info">View</a>
+                                <a href="/dashboard/product/{{ $product->id }}/edit" class="btn btn-sm btn-success">Edit</a>
+                                <a href="/dashboard/product/{{ $product->id }}/delete" class="btn btn-sm btn-danger">Delete</a> 
                             </td>
                         </tr>
                     @endforeach

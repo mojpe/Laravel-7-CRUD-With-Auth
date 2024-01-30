@@ -25,9 +25,9 @@
                             <td>{{ $product->price }} EUR</td>
                             <td>{{ $product->description }}</td>
                             <td> 
-                                <a href="/" class="btn btn-sm btn-info" disabled>View</a>
-                                <a href="/" class="btn btn-sm btn-success" disabled>Edit</a>
-                                <a href="/" class="btn btn-sm btn-danger" disabled>Delete</a> 
+                                <a href="/" class="btn btn-sm btn-info disabled">View</a>
+                                <a href="/" class="btn btn-sm btn-success disabled">Edit</a>
+                                <a href="/" class="btn btn-sm btn-danger disabled">Delete</a> 
                             </td>
                         </tr>
                     @endforeach
