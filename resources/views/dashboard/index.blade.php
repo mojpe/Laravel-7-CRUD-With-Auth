@@ -3,7 +3,9 @@
 @section('content')
     <div class="container mt-5">
         <h1>List of Products</h1>
-
+        <div>
+            <a href="/dashboard/product/create" class="btn btn-primary">Add Product</a>
+        </div>
         @if(count($products) > 0)
             <table class="table mt-3">
                 <thead>
