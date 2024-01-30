@@ -27,13 +27,13 @@ Route::get('/products', [ProductsController::class, 'index'])->name('products.in
 // Show a user's dashboard homepage
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // Show a user's products in their dashboard
-Route::get('/dashboard/products', [DashboardProductController::class, 'index'])->name('dashboard.products');
+Route::get('/dashboard/product', [DashboardProductController::class, 'index'])->name('dashboard.product');
 // Show the page to create a product
-Route::get('/dashboard/products/new', [DashboardProductController::class, 'create'])->name('dashboard.products.create');
+Route::get('/dashboard/product/new', [DashboardProductController::class, 'create'])->name('dashboard.product.create');
 // Show a single product
-Route::get('/dashboard/products/{id}', [DashboardProductController::class, 'show'])->name('dashboard.products.show');
+Route::get('/dashboard/product/{id}/view', [DashboardProductController::class, 'show'])->name('dashboard.product.show');
 // Show the page to edit a product
-Route::get('/dashboard/products/{id}/edit', [DashboardProductController::class, 'edit'])->name('dashboard.products.edit');
+Route::get('/dashboard/product/{id}/edit', [DashboardProductController::class, 'edit'])->name('dashboard.product.edit');
 // Lets a user login
 Auth::routes();
 
